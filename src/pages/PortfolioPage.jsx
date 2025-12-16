@@ -1,4 +1,3 @@
-function PortfolioPage() {
-  return <div>PortfolioPage</div>;
+export default function PortfolioPage() {
+  return <h1>Portfolio OK ✅</h1>;
 }
-export default PortfolioPage;

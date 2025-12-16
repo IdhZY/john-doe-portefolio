@@ -1,4 +1,3 @@
-function ServicesPage() {
-  return <div>ServicesPage</div>;
+export default function ServicesPage() {
+  return <h1>Services OK ✅</h1>;
 }
-export default ServicesPage;
