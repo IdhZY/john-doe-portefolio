@@ -1,11 +1,16 @@
-function Layout({ children }) {
+import { Outlet } from "react-router-dom";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
+
+export default function Layout() {
   return (
     <>
+     <div className="d-flex flex-column"></div>
       <Header />
-      <main>{children}</main>
+      <main className="container py-4 flex-grow-1">
+        <Outlet />
+      </main>
       <Footer />
     </>
   );
 }
-
-export default Layout;
