@@ -5,8 +5,9 @@ import Footer from "./Footer.jsx";
 export default function Layout() {
   return (
     <>
+     <div className="d-flex flex-column"></div>
       <Header />
-      <main className="container py-4">
+      <main className="container py-4 flex-grow-1">
         <Outlet />
       </main>
       <Footer />

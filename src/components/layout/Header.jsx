@@ -26,61 +26,30 @@ export default function Header() {
           {/* Menu */}
           <div className="collapse navbar-collapse" id="mainNavbar">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink
-                  to="/"
-                  end
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Accueil
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  to="/services"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Services
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  to="/portfolio"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Portfolio
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Contact
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  to="/mentions-legales"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Mentions légales
-                </NavLink>
-              </li>
+              {[
+                { to: "/", label: "Accueil", end: true },
+                { to: "/services", label: "Services" },
+                { to: "/portfolio", label: "Portfolio" },
+                { to: "/contact", label: "Contact" },
+                { to: "/mentions-legales", label: "Mentions légales" },
+              ].map(({ to, label, end }) => (
+                <li className="nav-item" key={to}>
+                  <NavLink
+                    to={to}
+                    end={end}
+                    className={({ isActive }) =>
+                      "nav-link nav-link-underline" +
+                      (isActive ? " active" : "")
+                    }
+                  >
+                    <span className="nav-link-text">{label}</span>
+                    <span
+                      className="nav-link-bar"
+                      aria-hidden="true"
+                    ></span>
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
